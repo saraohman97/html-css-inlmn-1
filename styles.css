@@ -133,46 +133,39 @@ html, body {
     background-color: #f7f7f7;
 }
 #services .content {
-    text-align: center;
     padding: 10rem;
-
-}
-#services h2 {
-}
-#services .line-2 {
-    height: 2.2px;
-    /* width: 33%; */
-    /* justify-items: center; */
-}
-#gallery {
-    margin-top: 4rem;
-}
-.box {
-    width: 20rem;
-    background-color: #fff;
-    padding: 2rem;
-    position: relative;
     text-align: center;
-
 }
-.circle {
-    height: 100px;
+#card-house { 
+    gap: 2rem;
+}
+.card {
+    width: 20rem;
+    height: 20rem;
+    background-color: white;
+    /* transition: box-shadow 100ms ease-in; */
+}
+.card-header {
+    padding: 3rem;
+    justify-content: center;
+}
+.logo {
     width: 100px;
+    height: 100px;
     background-color: var(--secondary-color);
     border-radius: 50%;
-    /* display: flex;
     justify-content: center;
-    align-items: center; */
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: relative;
-    margin-top: 4rem;
 }
-.box img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.card-body {
+    padding: 0 2rem; 
 }
+.card-body h3 {
+    margin-bottom: 1rem;
+}
+
+
+
+
+/* .card:hover {
+    
+} */
