@@ -7,14 +7,15 @@
     <title>Dental Clinics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
 
-    <!-- NAVBAR START -->
+  <!-- NAVBAR START -->
   <nav class="top-nav">
     <div class="container d-flex">
 
-      <div class="working-hours">
+      <div class="working-hours d-flex">
         <img src="img/clock icon.png" alt="">
         <small>Working hours: Monday - Friday: 9:00 - 18:00</small>
       </div>
@@ -25,20 +26,25 @@
         <a href="#"><i class="fab fa-google-plus-g"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
-
     </div>
   </nav>
 
   <nav class="navbar">
     <div class="container d-flex">
       <a href="#" class="navbar-brand"><img src="img/Logo.png" alt="logotype"></a>
+
+      <button class="navbar-toggler">
+        <i class="fas fa-bars"></i>
+      </button>
       
-      <ul class="navbar-nav d-flex">
-        <li class="nav-link"><a href="#">Home</a></li>
-        <li class="nav-link"><a href="#">About Us</a></li>
-        <li class="nav-link"><a href="#">Services</a></li>
-        <li class="nav-link"><a href="#">Contact</a></li>
-      </ul>
+      <div class="collapse">
+        <ul class="navbar-nav d-flex">
+          <li class="nav-link"><a href="#">Home</a></li>
+          <li class="nav-link"><a href="#">About Us</a></li>
+          <li class="nav-link"><a href="#">Services</a></li>
+          <li class="nav-link"><a href="#">Contact</a></li>
+        </ul>
+      </div>
       
     </div>
   </nav>
@@ -48,10 +54,10 @@
   <section id="showcase">
     <div class="container d-flex">
 
+      
       <img src="img/placehold.png" alt="">
-
+      
       <div class="content">
-        
         <div class="text">
           <h1>Modern technologies ensure safety</h1>
           <p>Our clinic is equipped with the highest quality medical and dental equipment, which allows for quick and effective treatment of the patient.</p>
@@ -107,7 +113,7 @@
         <h2>Our services</h2>
         <img src="img/line.png" class="line-2" alt="">
         
-        <div id="card-house" class="d-flex">
+        <div id="card-house">
           <div class="card card-1">
             <div class="card-header d-flex">
               <div class="logo d-flex"><img src="img/box1.png" alt="icon"></div>
@@ -176,21 +182,20 @@
     
   </section>
 
-  <!-- <div class="container">
-    <div class="card">
-
-      <div class="card-header">
-        <div class="logo">
-          <i class="fab fa-octopus-deploy"></i>
-        </div>
-      </div>
-
-      <div class="card-body">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-      </div>
-      
+  <!-- APPOINTMENT -->
+  <section id="appointment">
+    <div class="container">
+      <p>Do not wait and make an appointment today!</p>
+      <button class="btn btn-secondary">Book an appointment</button>
     </div>
-  </div> -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <small>@ 2020 DentialClinic</small>
+    </div>
+  </footer>
   
   
 </body>

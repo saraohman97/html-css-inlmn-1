@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
+
 :root {
     --primary-color: #2baaec;
     --secondary-color: #25e6c8;
@@ -9,11 +11,12 @@
     box-sizing: border-box;
 }
 html, body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Roboto';
+
     /* line-height: 1.5; */
 }
 .container {
-    width: 80%;
+    width: 100%;
     margin: auto;
 }
 .btn {
@@ -26,6 +29,10 @@ html, body {
 .btn-primary {
     background-color: var(--secondary-color);
     color: #f7f7f7;
+}
+.btn-secondary {
+    background-color: #f7f7f7;
+    color: var(--primary-color);
 }
 .btn-primary:hover {
     background-color: var(--primary-color);
@@ -46,11 +53,10 @@ html, body {
 /* TOP NAV */
 .top-nav {
     border: #d2d2d2 solid .5px;
-    padding: .2rem;
+    padding: .4rem 10rem;
 }
-.working-hours {
-    display: flex;
-    align-items: center;
+.working-hours img {
+    padding-right: .5rem;
 }
 .social-icons a {
     color: var(--primary-color);
@@ -62,26 +68,36 @@ html, body {
 
 /* MAIN NAV */
 .navbar {
-    /* padding: 1rem; */
-    margin: 2rem 0;
+    margin: 2rem 10rem;
 }
-.nav-link {
-    padding: 1rem;
-    display: inline-block;
+.top-nav-toggler {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+    color: #ffffff;
+    display: block;
 }
-.navbar-nav a {
+.collapsen {
+    display: none;
+}
+.navbar-nav a, .nav-link {
     text-decoration: none;
     color: black;
     font-size: 18px;
+    padding: 1rem;
+    list-style: none;
+    display: none;
 }
 
 /* SHOWCASE */
 #showcase {
     background-color: #DEDEDE;
+    padding: 0 10rem;
 }
-#showcase .container img {
+/* #showcase .container img {
     height: 30rem;
-}
+} */
 #showcase .content {
     align-self: center;
     text-align: left;
@@ -99,9 +115,12 @@ html, body {
 }
 
 /* ABOUT-US */
-#about-us .container img {
-    height: 35rem;
+#about-us {
+    padding: 0 10rem;
 }
+/* #about-us .container img {
+    height: 35rem;
+} */
 #about-us .content {
     padding: 10rem;
 
@@ -109,7 +128,7 @@ html, body {
 #about-us .content img {
     height: 2.2px;
     width: 100%;
-    margin: 1rem 0 2rem;
+    margin: 1rem 0 2rem 0;
 }
 #about-us .content h2 {
     color: #363636;
@@ -131,13 +150,20 @@ html, body {
 /* SERVICES */
 #services {
     background-color: #f7f7f7;
+    padding: 0 10rem;
 }
 #services .content {
     padding: 10rem;
     text-align: center;
 }
-#card-house { 
-    gap: 2rem;
+#services .line-2 {
+    width: 20rem;
+}
+#services #card-house { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 5rem;
 }
 .card {
     width: 20rem;
@@ -163,9 +189,65 @@ html, body {
     margin-bottom: 1rem;
 }
 
+/* APPOINTMENT */
+#appointment {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 5rem 10rem;
+}
+#appointment .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* FOOTER */
+#footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 1rem 0;
+}
+#footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
-/* .card:hover {
-    
-} */
+
+
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 720px;
+	}
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    .navbar-toggler {
+        display: none;
+    }
+    .collapse {
+        display: block;
+    }
+    /* .top-nav-nav {
+        flex-direction: row;
+    } */
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1140px;
+	}
+}
+
+@media (min-width: 1400px) {
+	.container {
+		max-width: 1300px;
+	}
+}
