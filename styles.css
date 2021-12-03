@@ -13,19 +13,21 @@ html, body {
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto Slab', serif;
     color: #363636;
-
-    /* line-height: 1.5; */
 }
 .container {
     width: 100%;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    /* border: 1px solid green; */
 }
 .btn {
     padding: 1rem 3rem;
     border: 1px solid transparent;
     border-radius: .7rem;
     outline: none;
-    /* display: inline-block; */
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: bold;
@@ -34,28 +36,27 @@ html, body {
     background-color: var(--secondary-color);
     color: #ffffff;
 }
+.btn-primary:hover {
+    background-color: var(--primary-color);
+}
 .btn-secondary {
     background-color: #ffffff;
     color: var(--primary-color);
 }
-.btn-primary:hover {
-    background-color: var(--primary-color);
+.btn-secondary:hover {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: var(--primary-color);
 }
-
-
-.d-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 
 /* TOP NAV */
 .top-nav {
-    display: block;
+    display: none;
     border: #d2d2d2 solid .5px;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+}
+.working-hours{
+    display: flex;
+    flex-direction: row;
 }
 .working-hours img {
     padding-right: .5rem;
@@ -75,9 +76,10 @@ html, body {
 }
 
 /* MAIN NAV */
-.navbar {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .navbar-toggler {
     background-color: transparent;
@@ -97,7 +99,6 @@ html, body {
     margin-left: 1rem;
     list-style: none;
 }
-
 
 /* SHOWCASE */
 #showcase {
@@ -123,26 +124,29 @@ html, body {
     height: 35rem;
 }
 .placehold-1 {
-    margin-top: 2rem;
-    margin-right: 10rem;
+    margin: 0 2rem 0 -1rem;
 }
-
 
 /* ABOUT-US */
-/* #about-us .container img {
-    height: 35rem;
-} */
-#about-us .content img {
-    margin: 1rem 0 2rem 0;
-    width: 100%;
-}
 #about-us .content h2 {
     font-size: 40px;
     font-weight: 400;
     line-height: normal;
 }
+.span-word-color {
+    color: var(--primary-color);
+}
+.line-1 {
+    margin: 1rem 0 2rem 0;
+    width: 100%;
+}
 #about-us .text {
     margin-bottom: 3rem;
+}
+#about-us .numbers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 #about-us .numbers h2 {
     font-size: 40px;
@@ -153,16 +157,14 @@ html, body {
     font-size: 18px;
 }
 .placehold-2 {
-    margin-top: 5rem;
-    margin-left: 9rem;
-    padding-right: 10rem;
+    margin: 2rem -1rem 0 2rem;
 }
 
 /* SERVICES */
 #services {
     background-color: #f7f7f7;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 #services .container {
     text-align: center;
@@ -171,15 +173,15 @@ html, body {
     font-size: 40px;
     font-weight: normal;
 }
-#services #card-house { 
+#services #card-house {
     display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(3, 400px);
-    gap: 1.5rem;
+    grid-template-columns: 400px 400px 400px;
+    /* grid-template-columns: repeat(3, minmax(400px, 1fr)); */
+    gap: 3rem;
     margin-top: 5rem;
 }
 .card {
+    background-color: #929292;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -188,20 +190,29 @@ html, body {
     border-radius: 5px;
     background-color: white;
     color: black;
-    width: 400px;
     height: 400px;
+    width: 400px;
     cursor: pointer;
     padding: 3.5rem;
+    transition: box-shadow 300ms ease-in-out;
+    
 }
 .card-header {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 .logo {
-    padding: 1.3rem;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--secondary-color);
     border-radius: 50%;
+    /* transition: transform 100ms ease-out, background 200ms ease-out; */
+    /* transition: box-shadow 0.25s ease-out 0ms; */
 }
 .card-body h3 {
     font-size: 22px;
@@ -214,26 +225,86 @@ html, body {
     font-weight: normal;
     color: #626262;
 }
+/* .card:hover {
+    box-shadow: 2px 2px 1rem #3333339d, 0 0 3rem #333333a8;
+} */
+/* .card:focus .card-header .logo,
+.card:hover .card-header .logo {
+    background: var(--primary-color);
+    width: 110px;
+    height: 110px;
+    border: 10px solid #abc4d1;
+} */
+.card:hover {
+
+    transition-delay: 0.3s;
+
+    box-shadow: 0px 10px 30px #0000004f;
+
+}
+
+.card:hover .logo {
+
+    background-color: var(--primary-color);
+
+    transition-property: box-shadow;
+
+    transition-duration: 0.3s;
+
+    transition-timing-function: ease-out;
+
+    box-shadow: 0 0 0 10px #2baaec33;
+
+}
+
+
+/* box hover circle shadow */
+/* @keyframes logoHover {
+    from {
+        box-shadow: 0 0 0 0px #2ba8ec33;
+    }
+    
+    to {
+        box-shadow: 0 0 0 10px #2ba8ec33;
+    }
+}
+.card:focus .card-header .logo, 
+.card:hover .card-header .logo {
+    background-color: #2BAAEC;
+    box-shadow: 0 0 0 10px #2ba8ec33; 
+}
+.card:hover .card-header .logo {
+    animation: logoHover .5s forwards;
+} */
+/* box hover circle shadow */
+
 
 /* APPOINTMENT */
 #appointment {
     background-color: var(--primary-color);
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    overflow: hidden;
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: white;
+    opacity: .1;
 }
 #appointment p {
     font-size: 30px;
     color: #ffffff;
     font-weight: lighter;
+    display: none;
 }
-
+/* #appointment .btn-secondary {
+    align-items: center;
+} */
 
 /* FOOTER */
 #footer {
-    display: block;
+    display: none;
     background-color: var(--primary-color);
-    padding-top: 2rem;
-    padding-bottom: 2rem;
 }
 #footer .container {
     display: flex;
@@ -242,35 +313,47 @@ html, body {
 }
 #footer small {
     font-family: 'Roboto', sans-serif;
-    color: #ffffff;
+    color: #ffffff86;
     font-weight: normal;
 }
 
 
-
 @media (max-width: 768px) {
-    .container {
-		max-width: 720px;
-        padding: 0 5rem;
-	}
-    .top-nav {
-        display: none;
-    }
-    #footer {
-        display: none;
+    #appointment .container{
+        justify-content: center;
     }
 }
 
 @media (min-width: 768px) {
-	.container {
-		max-width: 720px;
+    .container {
+        max-width: 720px;
+        border: 1px solid red;
+        padding: 1rem 0;
 	}
+    #showcase .container, #about-us .container {
+        padding-bottom: 0;
+    }
+    #showcase .content, #about-us .content {
+        padding-bottom: 1rem;
+    }
+    .top-nav .container, #footer .container {
+        padding: .2rem 0;
+    }
+    .top-nav {
+        display: block;
+    }
+    #footer {
+        display: block;
+    }
+    #appointment .container{
+        justify-content: center;
+    }
 }
 
 @media (min-width: 992px) {
     .container {
         max-width: 960px;
-        padding: 0 3rem;
+        border: 1px solid yellowgreen;
     }
     .navbar-toggler {
         display: none;
@@ -281,17 +364,54 @@ html, body {
     .placehold {
         display: block;
     }
+    #appointment p {
+        display: block;
+    }
+    #appointment .container{
+        justify-content: space-between;
+    }
 }
 
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1140px;
-        /* padding: 0 10rem; */
+        border: 1px solid pink;
 	}
+    .top-nav .container{
+        padding: .7rem 0;
+    }
+    .navbar .container {
+        padding: 2rem 0;
+    }
+    #showcase .placehold-1 {
+        padding: 0 2rem 0 0;
+    }
+    #showcase .content {
+        margin: 0 -3rem 0 1rem;
+    }
+    #about-us .content {
+        margin: 0 7rem 0 0;
+    }
+    #appointment .container {
+        padding: 3.5rem 0;
+    }
+    #footer .container {
+        padding: 1.2rem 0;
+    }
 }
 
 @media (min-width: 1400px) {
 	.container {
 		max-width: 1300px;
+        border: 1px solid blue;
 	}
+    #showcase .content {
+        margin: 0 0 0 6rem;
+    }
+    #about-us .content {
+        margin: 0 7rem 0 0;
+    }
+    #about-us .placehold-2 {
+        padding: 0 10rem 0 1rem;
+    }
 }
