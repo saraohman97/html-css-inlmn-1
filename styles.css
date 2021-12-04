@@ -21,7 +21,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    /* border: 1px solid green; */
+
 }
 .btn {
     padding: 1rem 3rem;
@@ -31,6 +31,7 @@ html, body {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
 }
 .btn-primary {
     background-color: var(--secondary-color);
@@ -38,15 +39,17 @@ html, body {
 }
 .btn-primary:hover {
     background-color: var(--primary-color);
+    box-shadow: 2px 2px 1rem #3333339d, 0 0 3rem #333333a8;
 }
 .btn-secondary {
     background-color: #ffffff;
     color: var(--primary-color);
+    position: sticky;
 }
 .btn-secondary:hover {
-    background-color: var(--primary-color);
-    border: 2px solid #ffffff;
+    background-color: var(--secondary-color);
     color: #ffffff;
+    box-shadow: 2px 2px 1rem #3333339d, 0 0 3rem #333333a8;
 }
 
 /* TOP NAV */
@@ -143,18 +146,11 @@ html, body {
 #about-us .text {
     margin-bottom: 3rem;
 }
-#about-us .numbers {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#about-us .numbers h2 {
-    font-size: 40px;
-    font-weight: lighter;
-    color: var(--primary-color);
-}
 .numbers p {
     font-size: 18px;
+}
+#about-us .numbers {
+    display: none;
 }
 .placehold-2 {
     margin: 2rem -1rem 0 2rem;
@@ -163,8 +159,6 @@ html, body {
 /* SERVICES */
 #services {
     background-color: #f7f7f7;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 }
 #services .container {
     flex-direction: column;
@@ -175,9 +169,6 @@ html, body {
     font-size: 2rem;
     font-weight: normal;
 }
-/* .line-2 {
-    width: 20rem;
-} */
 #services #card-house {
     margin-top: 1rem;
 }
@@ -236,7 +227,6 @@ html, body {
 /* APPOINTMENT */
 #appointment {
     background-color: var(--primary-color);
-    overflow: hidden;
     position: relative;
 }
 #appointment .container {
@@ -280,32 +270,53 @@ html, body {
         justify-content: center;
     }
 }
-
 @media (min-width: 768px) {
     .container {
         max-width: 720px;
-        border: 1px solid red;
-        padding: 1rem 0;
+        /* border: 1px solid red; */
 	}
-    #showcase .container, #about-us .container {
-        padding-bottom: 0;
+    #showcase .container, #about-us .container, #services .container {
+        padding: 3rem 0;
     }
     #showcase .content, #about-us .content {
         padding-bottom: 1rem;
+    }
+    /* @About us */
+    #about-us .numbers {
+        display: block;
+    }
+    #about-us .numbers {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #about-us .numbers h2 {
+        font-size: 40px;
+        font-weight: lighter;
+        color: var(--primary-color);
+    }
+    /* @Service */
+    #services h2 {
+        font-size: 40px;
+        font-weight: normal;
+    }
+    .line-2 {
+        margin: 1rem 0 2rem 0;
     }
     #services #card-house {
         display: grid;
         grid-template-columns: 250px 250px;
         gap: 1.5rem;
-        margin-top: 5rem;
     }
-    
 }
 
 @media (min-width: 992px) {
     .container {
         max-width: 960px;
-        border: 1px solid yellowgreen;
+        /* border: 1px solid yellowgreen; */
+    }
+    #showcase .container, #about-us .container {
+        padding-bottom: 0;
     }
     .navbar-toggler {
         display: none;
@@ -333,14 +344,13 @@ html, body {
         display: grid;
         grid-template-columns: 250px 250px 250px;
         gap: 1.5rem;
-        margin-top: 5rem;
     }
 }
 
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1140px;
-        border: 1px solid pink;
+        /* border: 1px solid pink; */
 	}
     .top-nav .container{
         padding: .7rem 0;
@@ -363,24 +373,17 @@ html, body {
     #footer .container {
         padding: 1.2rem 0;
     }
-
-    /* Services start */
+    /* @Services */
     #services {
         background-color: #f7f7f7;
-        padding: 5rem 0;
     }
     #services .container {
         text-align: center;
-    }
-    #services h2 {
-        font-size: 40px;
-        font-weight: normal;
     }
     #services #card-house {
         display: grid;
         grid-template-columns: 350px 350px 350px;
         gap: 1.5rem;
-        margin-top: 5rem;
     }
     .card {
         background-color: #929292;
@@ -428,13 +431,12 @@ html, body {
         transition-timing-function: ease-out;
         box-shadow: 0 0 0 10px #2baaec33;
     }
-    /* Services end */
 }
 
 @media (min-width: 1400px) {
 	.container {
 		max-width: 1300px;
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
 	}
     #showcase .content {
         margin: 0 0 0 6rem;
@@ -445,12 +447,11 @@ html, body {
     #about-us .placehold-2 {
         padding: 0 10rem 0 1rem;
     }
-
+    /* @Services */
     #services #card-house {
         display: grid;
         grid-template-columns: 400px 400px 400px;
         gap: 1.5rem;
-        margin-top: 5rem;
     }
     .card {
         background-color: #929292;
